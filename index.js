@@ -7,7 +7,7 @@ for( var i = 0; i < boxes.length; i++){
   boxes[i].addEventListener('click', function(){
     var index = this.getAttribute('data-index');
 
-    if (board[index] === '' && winnerDiv.innerHTML === ''){
+    if (boxes[index].innerHTML === '' && winnerDiv.innerHTML === ''){
 
       if(turn === 1){
         this.innerHTML = "X";
