@@ -3,6 +3,7 @@ var boxes = document.querySelectorAll(".box");
 var board = ['', '', '', '', '', '', '', '', ''];
 var winnerDiv = document.querySelector(".winner");
 
+//The clicking
 for (var i = 0; i < boxes.length; i++) {
   boxes[i].addEventListener('click', function () {
     var index = this.getAttribute('data-index');
@@ -23,6 +24,7 @@ for (var i = 0; i < boxes.length; i++) {
   });
 }
 
+//Function to check for a winner or draw
 function checkWinner() {
   var winnerCheck = [
     [0, 1, 2], [3, 4, 5], [6, 7, 8],
@@ -30,6 +32,7 @@ function checkWinner() {
     [0, 4, 8], [2, 4, 6]
   ];
 
+  //loops through winning combinations
   for (var i = 0; i < winnerCheck.length; i++) {
     var [a, b, c] = winnerCheck[i];
 
@@ -39,7 +42,9 @@ function checkWinner() {
     }
   }
 
+  //Draw 
   if (!board.includes('') && winnerDiv.innerHTML === '') {
     winnerDiv.innerHTML = "It's a draw!";
   }
 }
+
